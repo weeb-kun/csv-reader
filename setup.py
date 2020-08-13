@@ -14,12 +14,16 @@ Copyright 2020 weebkun
    limitations under the License.
 """
 
+import pathlib
 from setuptools import setup
 
 setup(
     name="csv-reader",
-    version="1.0.0",
+    version="1.0.1",
+    long_description= (pathlib.Path(__file__).parent / "readme.md").read_text(),
+    long_description_content_type="text/markdown",
     description="reader library for csv files.",
+    url="https://github.com/weeb-kun/csv-reader",
     author="weebkun",
     packages=["reader"],
     entry_points={
