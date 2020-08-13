@@ -14,5 +14,9 @@ Copyright 2020 weebkun
    limitations under the License.
 """
 
+def main():
+    print("module started.")
+
 if __name__ == '__main__':
+    main()
     print("this is a library for reading from csv files.")

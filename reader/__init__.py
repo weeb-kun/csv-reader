@@ -14,4 +14,4 @@ Copyright 2020 weebkun
    limitations under the License.
 """
 
-__version__ = "1.0.2"
+__version__ = "1.1.0"
