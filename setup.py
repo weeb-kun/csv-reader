@@ -28,7 +28,7 @@ setup(
     packages=["reader"],
     entry_points={
         "console_scripts": [
-            "reader=reader.__main__"
+            "reader=reader.__main__:main"
         ]
     },
     license="Apache 2.0"
