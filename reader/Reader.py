@@ -16,15 +16,21 @@ Copyright 2020 weebkun
 
 import csv
 import typing
+from contextlib import contextmanager
 
-def openWithName(name: str) -> typing.Iterable:
+@contextmanager
+def openWithName(name: str):
     """
-    opens a csv file and returns the reader object.
+    opens a csv file as a context manager with the name given.
     :param str name: the name of the file to be read from
     :return: the reader iterable object
     """
-    with open(name, newline="") as file:
-        return csv.reader(file)
+    f = open(name, newline="")
+    resoure = csv.reader(f)
+    try:
+        yield f
+    finally:
+        f.close()
 
 def openWithFile(file: typing.TextIO) -> typing.Iterable:
     """

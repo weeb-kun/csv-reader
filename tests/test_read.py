@@ -13,14 +13,17 @@ Copyright 2020 weebkun
    See the License for the specific language governing permissions and
    limitations under the License.
 """
-
 from reader import Reader
+import pathlib
 
 def test():
     try:
-        for line in Reader.openWithName("test.csv"):
-            assert "test" in line[0]
-            continue
+        with Reader.openWithName(pathlib.Path(__file__).absolute().parent / "test.csv") as f:
+            for line in f:
+                print(line)
     except AssertionError as e:
         print(e)
+    except IOError as e:
+        print(e)
 
+test()

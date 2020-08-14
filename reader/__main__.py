@@ -14,8 +14,13 @@ Copyright 2020 weebkun
    limitations under the License.
 """
 
+import Reader
+
 def main():
     print("module started.")
+
+def openWithName(name: str):
+    Reader.openWithName(name)
 
 if __name__ == '__main__':
     main()
