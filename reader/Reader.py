@@ -26,35 +26,49 @@ def openWithName(name: str):
     :return: the reader iterable object
     """
     f = open(name, newline="")
-    resoure = csv.reader(f)
+    resource = csv.reader(f)
     try:
-        yield f
+        yield resource
     finally:
         f.close()
 
+@contextmanager
 def openWithFile(file: typing.TextIO) -> typing.Iterable:
     """
-    opens a csv file and returns the reader object. uses an already opened file.
+    opens a csv file and returns a context manager that yields the reader object.
     :param typing.TextIO file: the file obj to open
     :return: reader iterable obj
     """
-    return csv.reader(file)
+    try:
+        yield csv.reader(file)
+    finally:
+        file.close()
 
-def readFromName(name: str) -> typing.Iterator:
+@contextmanager
+def readFromName(name: str):
     """
-    reads from a csv file and returns an iterator for it.
+    reads from a csv file and returns a context manager that yields an iterator.
     :param str name: the name of the file to be read
     :return: the iterator
     """
-    with open(name, newline="") as file:
-        for line in csv.reader(file):
-            yield ",".join(line)
+    file = open(name, newline="")
+    try:
+        yield iterateLines(file)
+    finally:
+        file.close()
 
-def readFromFile(file: typing.TextIO) -> typing.Iterator:
+@contextmanager
+def readFromFile(file: typing.TextIO):
     """
-    reads from a file and returns an iterator.
+    reads from a file and returns an context manager that yields an iterator.
     :param typing.TextIO file: the csv file to read from.
     :return: iterator
     """
+    try:
+        yield iterateLines(file)
+    finally:
+        file.close()
+
+def iterateLines(file):
     for line in csv.reader(file):
-        yield ",".join(line)
+            yield ",".join(line)

@@ -18,9 +18,8 @@ import pathlib
 
 def test():
     try:
-        with Reader.openWithName(pathlib.Path(__file__).absolute().parent / "test.csv") as f:
-            for line in f:
-                print(line)
+        for line in Reader.readFromName("test.csv"):
+            print(line)
     except AssertionError as e:
         print(e)
     except IOError as e:
