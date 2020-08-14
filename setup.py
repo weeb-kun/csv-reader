@@ -19,7 +19,7 @@ from setuptools import setup
 
 setup(
     name="csv-reader",
-    version="1.1.0",
+    version="1.2.0-alpha",
     long_description= (pathlib.Path(__file__).parent / "readme.md").read_text(),
     long_description_content_type="text/markdown",
     description="reader library for csv files.",
