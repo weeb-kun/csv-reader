@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: csv-reader
-Version: 1.2.0b0
+Version: 1.2.0
 Summary: reader library for csv files.
 Home-page: https://github.com/weeb-kun/csv-reader
 Author: weebkun
@@ -16,43 +16,80 @@ Description: # Introduction
         Type this into your command prompt:
         `pip install csv-reader`
         
-        ## usage
+        ## Usage
         
         at the top of your py files:
         ```python
-        import reader
+        from reader import Reader
         ```
         
         in your code:
         ```python
-        for line in reader.openWithName("example.csv"):
-            print(",".join(line))
+        with Reader.openWithName("test.csv") as file:
+            for line in file:
+                print(line)
         ```
         
         ## Documentation
         
         ```python
-        openWithName(name: str) -> Iterable
+        openWithName(name: str)
         ```
-        opens a csv file with the given name and returns the reader object.
-        `name - the name of the csv file.`
+        opens a file with the given file name and returns a context manager.<br>
+        `name - the name of the csv file.`<br>
+        `throws: FileNotFoundError - when the file could not be found.`
+        e.g.
+        ```python
+        with Reader.openWithName("test.csv") as file:
+            for line in file:
+                print(line)
+        ```
+        <br>
+        note: when used in a `for` loop, each `line` is a list of values in each line of the file.
         
         ```python
-        openWithFile(file: TextIO) -> Iterable
+        openWithFile(file: TextIO)
         ```
-        returns a reader object from an already opened file.
-        `file - the file object.`
+        returns a context manager from an already opened file.<br>
+        `file - the file object.`<br>
+        `throws: FileNotFoundError - when the file could not be found.`
+        e.g.
+        ``` python
+        with Reader.openWithFile(open("test.csv" newline="")) as file:
+            for line in file:
+                print(line)
+        ```
+        <br>
+        note: when used in a `for` loop, each `line` is a list of values in each line of the file.
         
         ```python
-        readFromName(name: str) -> Iterator
+        readFromName(name: str)
         ```
-        opens a csv file and returns an iterator for that file.
-        `name - the name of the csv file.`
+        opens a file with given name and returns a context manager that yields an iterator that yields each line in the file.<br>
+        `name - the name of the csv file.`<br>
+        `throws: FileNotFoundError - when the file could not be found.`
+        e.g.
+        ```python
+        with Reader.readFromName("test.csv") as file:
+            for line in file:
+                print(line)
+        ```
+        <br>
+        note: `line` is a string.
         
         ```python
-        readFromFile(file: TextIO) -> Iterator
+        readFromFile(file: TextIO)
         ```
-        returns an iterator from a given file object.
-        `file - the file object.`
+        returns an context manager from an already opened file that yields an iterator that yields each line in the file.<br>
+        `file - the file object.`<br>
+        `throws: FileNotFoundError - when the file could not be found.`
+        e.g.
+        ```python
+        with Reader.readFromFile(open("test.csv", newline="")) as file:
+            for line in file:
+                print(line)
+        ```
+        <br>
+        note: `line` is a string.
 Platform: UNKNOWN
 Description-Content-Type: text/markdown
