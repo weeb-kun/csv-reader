@@ -33,7 +33,7 @@ def openWithName(name: str):
         f.close()
 
 @contextmanager
-def openWithFile(file: typing.TextIO) -> typing.Iterable:
+def openWithFile(file: typing.TextIO):
     """
     opens a csv file and returns a context manager that yields the reader object.
     :param typing.TextIO file: the file obj to open
