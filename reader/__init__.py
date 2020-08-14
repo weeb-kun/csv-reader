@@ -14,4 +14,4 @@ Copyright 2020 weebkun
    limitations under the License.
 """
 
-__version__ = "1.2.0-alpha"
+__version__ = "1.2.0-beta"
