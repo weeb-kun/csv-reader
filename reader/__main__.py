@@ -19,8 +19,17 @@ import Reader
 def main():
     print("module started.")
 
-def openWithName(name: str):
-    Reader.openWithName(name)
+def openWithName(name):
+    return Reader.openWithName(name)
+
+def openWithFile(file):
+    return Reader.openWithFile(file)
+
+def readFromName(name):
+    return Reader.readFromName(name)
+
+def readFromFile(file):
+    return Reader.readFromFile(file)
 
 if __name__ == '__main__':
     main()
