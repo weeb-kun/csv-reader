@@ -24,6 +24,8 @@ with Reader.openWithName("test.csv") as file:
 ```
 
 ## Documentation
+<br>
+Visit https://csv-reader.readthedocs.io/en/latest for the documentation.
 
 ```python
 openWithName(name: str)
