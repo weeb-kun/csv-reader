@@ -14,6 +14,7 @@ Contents
 
    License
    api
+   Examples
 
 
 Indices and tables
