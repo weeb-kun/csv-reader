@@ -30,7 +30,7 @@ Visit https://csv-reader.readthedocs.io/en/latest for the documentation.
 <br>
 
 ## Examples
-The examples can also be found at 
+The examples can also be found at https://csv-reader.readthedocs.io/en/latest/Examples.html
 
 ### openWithName()
 
