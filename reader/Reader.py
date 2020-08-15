@@ -21,6 +21,9 @@ def openWithName(name: str):
     """opens a csv file as a context manager with the name given.
 
     :param name: the name of the file
+    :type name: str
+    :returns: the reader object
+    :rtype: typing.Iterator
     """
     f = open(name, newline="")
     try:
@@ -30,9 +33,12 @@ def openWithName(name: str):
 
 @contextmanager
 def openWithFile(file: typing.TextIO):
-    """opens a csv file and returns a context manager that yields the reader object.
+    """yields the csv reader object from an already opened file.
 
-    :param file: the file obj to open
+    :param file: the file obj to use
+    :type file: typing.TextIO
+    :returns: the reader object
+    :rtype: typing.Iterator
     """
     try:
         yield csv.reader(file)
@@ -44,6 +50,9 @@ def readFromName(name: str):
     """reads from a csv file and returns a context manager that yields an iterator.
 
     :param name: the name of the file
+    :type name: str
+    :returns: the reader object
+    :rtype: typing.Iterator
     """
     file = open(name, newline="")
     try:
@@ -52,10 +61,13 @@ def readFromName(name: str):
         file.close()
 
 @contextmanager
-def readFromFile(file: typing.TextIO) -> typing.Iterator:
+def readFromFile(file: typing.TextIO):
     """reads from a file and returns an context manager that yields an iterator.
 
     :param file: the csv file to read from.
+    :type file: typing.TextIO
+    :returns: the reader object
+    :rtype: typing.Iterator
     """
     try:
         yield iterateLines(file)

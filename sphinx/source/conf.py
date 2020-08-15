@@ -14,6 +14,10 @@
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
+import os
+import sys
+sys.path.insert(0, os.path.abspath("../.."))
+
 
 # -- Project information -----------------------------------------------------
 
@@ -26,7 +30,6 @@ author = 'weebkun'
 # The full version, including alpha/beta/rc tags
 release = '1.2.0'
 
-
 # -- General configuration ---------------------------------------------------
 
 # Add any Sphinx extension module names here, as strings. They can be
@@ -34,8 +37,7 @@ release = '1.2.0'
 # ones.
 extensions = [
     "sphinx.ext.autodoc",
-    "sphinx_rtd_theme",
-    "sphinx_autodoc_annotation"
+    "sphinx_rtd_theme"
 ]
 
 # Add any paths that contain templates here, relative to this directory.
