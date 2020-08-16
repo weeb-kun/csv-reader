@@ -3,3 +3,4 @@ dist
 venv
 csv-reader.egg-info
 .idea
+docs
