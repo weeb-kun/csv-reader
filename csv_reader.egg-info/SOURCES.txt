@@ -1,9 +1,0 @@
-setup.py
-csv_reader.egg-info/PKG-INFO
-csv_reader.egg-info/SOURCES.txt
-csv_reader.egg-info/dependency_links.txt
-csv_reader.egg-info/entry_points.txt
-csv_reader.egg-info/top_level.txt
-reader/Reader.py
-reader/__init__.py
-reader/__main__.py

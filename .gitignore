@@ -1,6 +1,7 @@
 build
 dist
 venv
-csv-reader.egg-info
+*.egg-info
 .idea
 docs
+out
