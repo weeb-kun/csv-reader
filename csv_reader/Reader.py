@@ -16,6 +16,8 @@ import csv
 import typing
 from contextlib import contextmanager
 
+# todo convert to class
+
 @contextmanager
 def openWithName(name: str):
     """opens a csv file as a context manager with the name given.

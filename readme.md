@@ -13,7 +13,7 @@ Type this into your command prompt:
 
 at the top of your py files:
 ```python
-from reader import Reader
+from csv_reader import Reader
 ```
 
 in your code:
@@ -32,7 +32,9 @@ Visit https://csv-reader.readthedocs.io/en/latest for the documentation.
 ## Examples
 The examples can also be found at https://csv-reader.readthedocs.io/en/latest/Examples.html
 
-### openWithName()
+### Reader
+
+#### openWithName()
 
 ```python
 with Reader.openWithName("test.csv") as file:
@@ -42,7 +44,7 @@ with Reader.openWithName("test.csv") as file:
 <br>
 note: when used in a `for` loop, each `line` is a list of values in each line of the file.
 
-### openWithFile()
+#### openWithFile()
 ``` python
 with Reader.openWithFile(open("test.csv" newline="")) as file:
     for line in file:
@@ -51,7 +53,7 @@ with Reader.openWithFile(open("test.csv" newline="")) as file:
 <br>
 note: when used in a `for` loop, each `line` is a list of values in each line of the file.
 
-### readFromName()
+#### readFromName()
 
 ```python
 with Reader.readFromName("test.csv") as file:
@@ -61,7 +63,7 @@ with Reader.readFromName("test.csv") as file:
 <br>
 note: `line` is a string.
 
-### readFromFile()
+#### readFromFile()
 
 ```python
 with Reader.readFromFile(open("test.csv", newline="")) as file:
@@ -70,3 +72,27 @@ with Reader.readFromFile(open("test.csv", newline="")) as file:
 ```
 <br>
 note: `line` is a string.
+
+### Writer
+The Writer module provides 2 classes for writing to csv files. 1 uses lists while another uses dicts.
+
+```python
+from csv_reader import Writer
+```
+<br>
+
+#### csv_reader.CSVWriter
+```python
+with CSVWriter("test.csv") as file:
+    file.write(["test1", "test2"])
+```
+<br>
+
+#### csv_reader.CSVDictWriter
+```python
+with CSVDictWriter("test.csv", ["field1", "field2"]) as file:
+    file.writeRows([
+        {"field1":"test1", "field2":"test2"},
+        {"field1": "test3", "field2": "test4"}
+    ])
+```

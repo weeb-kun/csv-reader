@@ -1,8 +1,7 @@
 API Reference
 =============
 
-Reader
-^^^^^^
-
 .. toctree::
-    modules
+    :maxdepth: 3
+    reader
+    writer

@@ -1,5 +1,8 @@
 Examples
-========
+^^^^^^^^
+
+Reader
+======
 
 openWithName()
 --------------
@@ -39,3 +42,12 @@ readFromFile()
     with Reader.readFromFile(open("test.csv", newline="")) as file:
     for line in file:
         print(line)
+
+Writer
+======
+
+CSVWriter
+---------
+
+CSVDictWriter
+-------------

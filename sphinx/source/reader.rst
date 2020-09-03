@@ -1,20 +1,6 @@
-reader package
-==============
+Reader
+=======
 
-Submodules
-----------
-
-reader.Reader module
---------------------
-
-.. automodule:: reader.Reader
+.. automodule:: csv_reader.Reader
    :members:
-   :show-inheritance:
-
-Module contents
----------------
-
-.. automodule:: reader
-   :members:
-   :undoc-members:
    :show-inheritance:

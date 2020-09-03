@@ -19,16 +19,16 @@ from setuptools import setup
 
 setup(
     name="csv-reader",
-    version="1.2.0",
+    version="2.0.0-alpha",
     long_description= (pathlib.Path(__file__).parent / "readme.md").read_text(),
     long_description_content_type="text/markdown",
     description="reader library for csv files.",
     url="https://github.com/weeb-kun/csv-reader",
     author="weebkun",
-    packages=["reader"],
+    packages=["csv_reader"],
     entry_points={
         "console_scripts": [
-            "reader=reader.__main__:main"
+            "reader=csv_reader.__main__:main"
         ]
     },
     license="Apache 2.0"
