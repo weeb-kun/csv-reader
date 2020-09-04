@@ -6,3 +6,4 @@ venv
 docs
 out
 .vscode
+__pycache__
